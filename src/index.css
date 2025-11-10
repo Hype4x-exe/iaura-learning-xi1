@@ -1,0 +1,498 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* iOS 26 Futuristic Design System - Glassmorphism, Liquid Motion, Depth */
+
+@layer base {
+  :root {
+    /* Light mode - Dark green theme */
+    --background: 140 30% 96%;
+    --foreground: 0 0% 10%;
+
+    /* Primary - Dark green */
+    --primary: 142 60% 35%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 142 60% 50%;
+    --primary-soft: 142 40% 75%;
+
+
+    /* Glass surface colors */
+    --surface: 140 20% 95%;
+    --surface-light: 0 0% 100%;
+    --surface-glass: 140 15% 93%;
+
+    /* Glassmorphism colors */
+    --glass-bg: 0 0% 100%;
+    --glass-tint: 142 20% 90%;
+    --glass-border: 142 15% 85%;
+    --glass-overlay: 140 20% 95%;
+
+    /* Secondary - light green */
+    --secondary: 142 25% 90%;
+    --secondary-foreground: 142 60% 25%;
+
+    /* Muted - soft green tint */
+    --muted: 140 15% 88%;
+    --muted-foreground: 0 0% 40%;
+
+    /* Accent - medium green */
+    --accent: 142 35% 85%;
+    --accent-foreground: 142 70% 30%;
+
+    /* Destructive - soft red glow */
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Card - frosted glass */
+    --card: 140 20% 94%;
+    --card-foreground: 0 0% 10%;
+
+    /* Popover - floating glass */
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    /* Borders - subtle glass edge */
+    --border: 142 15% 80%;
+    --input: 140 20% 92%;
+    --ring: 142 60% 35%;
+
+    /* Border radius - Apple-style fluid */
+    --radius: 1.5rem;
+
+    /* Glassmorphic shadows - depth and elevation */
+    --shadow-glass: 0 8px 32px 0 rgba(20, 40, 30, 0.15);
+    --shadow-float: 0 20px 60px -15px rgba(20, 40, 30, 0.25);
+    --shadow-glow: 0 0 40px hsla(var(--primary), 0.3);
+    --shadow-neon: 0 0 20px hsla(var(--primary), 0.5), 0 0 40px hsla(var(--primary), 0.2);
+    
+    /* Liquid gradients - green flow */
+    --gradient-primary: linear-gradient(135deg, hsl(142, 60%, 35%), hsl(142, 60%, 50%));
+    --gradient-glass: linear-gradient(135deg, 
+      hsla(0, 0%, 100%, 0.4), 
+      hsla(142, 20%, 90%, 0.2)
+    );
+    --gradient-hero: linear-gradient(180deg, 
+      hsl(140, 30%, 96%) 0%, 
+      hsl(142, 25%, 90%) 50%,
+      hsl(140, 30%, 94%) 100%
+    );
+    --gradient-soft: linear-gradient(135deg, 
+      hsl(140, 25%, 94%), 
+      hsl(142, 20%, 88%)
+    );
+    --gradient-neon: linear-gradient(135deg, 
+      hsl(var(--primary)), 
+      hsl(var(--secondary))
+    );
+    
+    /* Animations - spring physics, liquid motion */
+    --transition-smooth: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    --transition-liquid: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    --transition-spring: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-glass: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .dark {
+    /* Dark mode - Teal and Blue theme */
+    --background: 192 45% 12%;
+    --foreground: 0 0% 95%;
+
+    --surface: 192 40% 15%;
+    --surface-light: 192 35% 18%;
+    --surface-glass: 192 38% 16%;
+
+    --glass-bg: 192 40% 14%;
+    --glass-tint: 192 35% 17%;
+    --glass-border: 192 30% 22%;
+    --glass-overlay: 192 40% 15%;
+
+    --primary: 205 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 205 100% 70%;
+    --primary-soft: 205 80% 40%;
+
+    --secondary: 192 35% 20%;
+    --secondary-foreground: 205 90% 80%;
+
+    --muted: 192 25% 20%;
+    --muted-foreground: 192 15% 60%;
+
+    --accent: 192 40% 18%;
+    --accent-foreground: 205 100% 70%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --card: 192 38% 16%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 192 40% 17%;
+    --popover-foreground: 0 0% 95%;
+
+    --border: 192 30% 24%;
+    --input: 192 35% 18%;
+    --ring: 205 100% 60%;
+
+    --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+    --shadow-float: 0 20px 60px -15px rgba(0, 0, 0, 0.8);
+    --shadow-glow: 0 0 40px hsla(var(--primary), 0.3);
+    --shadow-neon: 0 0 20px hsla(var(--primary), 0.5), 0 0 40px hsla(var(--primary), 0.2);
+
+    --gradient-primary: linear-gradient(135deg, hsl(205, 100%, 60%), hsl(205, 100%, 70%));
+    --gradient-glass: linear-gradient(135deg, 
+      hsla(192, 40%, 17%, 0.7), 
+      hsla(192, 35%, 20%, 0.4)
+    );
+    --gradient-hero: linear-gradient(180deg, 
+      hsl(192, 45%, 12%) 0%, 
+      hsl(192, 40%, 15%) 50%,
+      hsl(192, 45%, 13%) 100%
+    );
+    --gradient-soft: linear-gradient(135deg, 
+      hsl(192, 40%, 14%), 
+      hsl(192, 38%, 16%)
+    );
+    --gradient-neon: linear-gradient(135deg, 
+      hsl(var(--primary)), 
+      hsl(var(--secondary))
+    );
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Rounded', 'SF Pro Display', 'Inter', system-ui, sans-serif;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv03";
+    font-smooth: always;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* iOS 26 Glassmorphism - Ultra-frosted depth */
+  .glass {
+    background: linear-gradient(135deg, 
+      hsla(var(--glass-bg), 0.3), 
+      hsla(var(--glass-tint), 0.2)
+    );
+    backdrop-filter: blur(60px) saturate(200%) brightness(1.15);
+    -webkit-backdrop-filter: blur(60px) saturate(200%) brightness(1.15);
+    border: 1px solid hsla(var(--glass-border), 0.25);
+    box-shadow: 
+      var(--shadow-glass),
+      inset 0 1px 1px rgba(255, 255, 255, 0.5),
+      inset 0 -1px 1px rgba(0, 0, 0, 0.05);
+    transition: var(--transition-glass);
+  }
+
+  .glass-strong {
+    background: linear-gradient(135deg, 
+      hsla(var(--glass-bg), 0.8), 
+      hsla(var(--glass-tint), 0.6)
+    );
+    backdrop-filter: blur(80px) saturate(220%) brightness(1.2);
+    -webkit-backdrop-filter: blur(80px) saturate(220%) brightness(1.2);
+    border: 1px solid hsla(var(--glass-border), 0.4);
+    box-shadow: 
+      var(--shadow-float),
+      inset 0 2px 2px rgba(255, 255, 255, 0.6),
+      inset 0 -2px 2px rgba(0, 0, 0, 0.08);
+    transition: var(--transition-glass);
+  }
+
+  .glass:hover {
+    background: linear-gradient(135deg, 
+      hsla(var(--glass-bg), 0.4), 
+      hsla(var(--glass-tint), 0.3)
+    );
+    transform: translateY(-2px) scale(1.01);
+  }
+
+  .glass-strong:hover {
+    box-shadow: 
+      var(--shadow-float),
+      var(--shadow-glow),
+      inset 0 2px 2px rgba(255, 255, 255, 0.7),
+      inset 0 -2px 2px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px) scale(1.02);
+  }
+
+  /* Liquid button - ripple spread effect */
+  .liquid-button {
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-spring);
+    box-shadow: var(--shadow-glass);
+  }
+
+  .liquid-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, hsla(var(--primary-glow), 0.5), transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: width 1s cubic-bezier(0.19, 1, 0.22, 1), 
+                height 1s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  .liquid-button:hover {
+    box-shadow: var(--shadow-glow), var(--shadow-glass);
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  .liquid-button:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  .liquid-button:active::before {
+    width: 500px;
+    height: 500px;
+  }
+
+  /* Parallax particle background */
+  .liquid-bg {
+    background: var(--gradient-hero);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .liquid-bg::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: 
+      radial-gradient(circle at 20% 30%, hsla(211, 100%, 70%, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, hsla(271, 100%, 70%, 0.06) 0%, transparent 50%),
+      radial-gradient(circle at 40% 80%, hsla(211, 80%, 60%, 0.04) 0%, transparent 50%);
+    animation: parallaxFloat 30s ease-in-out infinite;
+  }
+
+  @keyframes parallaxFloat {
+    0%, 100% { 
+      transform: translate(0%, 0%) rotate(0deg);
+    }
+    33% { 
+      transform: translate(-5%, 5%) rotate(5deg);
+    }
+    66% { 
+      transform: translate(5%, -5%) rotate(-5deg);
+    }
+  }
+
+  /* Breathing glow animation */
+  @keyframes breathe {
+    0%, 100% { 
+      transform: scale(1);
+      filter: brightness(1);
+      box-shadow: var(--shadow-glass);
+    }
+    50% { 
+      transform: scale(1.05);
+      filter: brightness(1.1);
+      box-shadow: var(--shadow-glow);
+    }
+  }
+
+  .breathe {
+    animation: breathe 4s ease-in-out infinite;
+  }
+
+  /* Float animation - gentle levitation */
+  @keyframes float {
+    0%, 100% { 
+      transform: translateY(0px); 
+    }
+    50% { 
+      transform: translateY(-10px); 
+    }
+  }
+
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Fade in up - smooth entry */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+
+  /* Liquid dissolve - organic fade out */
+  @keyframes liquidDissolve {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0px);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.92);
+      filter: blur(15px);
+    }
+  }
+
+  .liquid-dissolve {
+    animation: liquidDissolve 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+
+  /* Liquid morph - smooth shape change */
+  @keyframes liquidMorph {
+    0%, 100% {
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    50% {
+      border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+  }
+
+  .liquid-morph {
+    animation: liquidMorph 8s ease-in-out infinite;
+  }
+
+  /* Progress ring - smooth liquid fill */
+  @keyframes liquidFill {
+    from {
+      stroke-dashoffset: 283;
+      opacity: 0.3;
+    }
+    to {
+      stroke-dashoffset: 0;
+      opacity: 1;
+    }
+  }
+
+  /* Neon pulse glow */
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow: 
+        var(--shadow-glass),
+        0 0 30px hsla(var(--primary), 0.3);
+    }
+    50% {
+      box-shadow: 
+        var(--shadow-float),
+        var(--shadow-neon);
+    }
+  }
+
+  .pulse-glow {
+    animation: pulseGlow 3s ease-in-out infinite;
+  }
+
+  /* Liquid ripple on tap */
+  @keyframes liquidRipple {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+
+  .liquid-ripple {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .liquid-ripple::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, hsla(var(--primary-glow), 0.4), transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    pointer-events: none;
+  }
+
+  .liquid-ripple:active::after {
+    animation: liquidRipple 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  /* Shimmer effect - Apple-style loading */
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      hsla(var(--surface), 1) 0%,
+      hsla(var(--surface-light), 1) 50%,
+      hsla(var(--surface), 1) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s ease-in-out infinite;
+  }
+
+  /* Smooth scrolling */
+  * {
+    scroll-behavior: smooth;
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Safe area padding for mobile notches */
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .pl-safe {
+    padding-left: env(safe-area-inset-left);
+  }
+
+  .pr-safe {
+    padding-right: env(safe-area-inset-right);
+  }
+
+  /* Mobile-optimized touch targets */
+  @media (max-width: 640px) {
+    button, a {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}

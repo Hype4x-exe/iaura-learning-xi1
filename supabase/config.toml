@@ -1,0 +1,10 @@
+project_id = "rayibkncimncrqqbuzxo"
+
+[functions.generate-from-topic]
+verify_jwt = false
+
+[functions.process-material]
+verify_jwt = false
+
+[functions.ai-tutor]
+verify_jwt = false
